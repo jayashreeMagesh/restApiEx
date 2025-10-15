@@ -26,7 +26,7 @@ import java.util.Objects;
 public class getRequestApi {
     WebDriver driver;
 
-@Test(groups = "getRequestwithParms")
+@Test(groups = {"getRequestwithParms"})
 public void getRequest(){
 
         RequestSpecification requestSpecification = RestAssured.given();
