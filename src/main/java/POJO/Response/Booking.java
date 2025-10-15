@@ -1,6 +1,6 @@
-package POJO.Request.Response;
+package POJO.Response;
 
-import POJO.Request.Bookingdates;
+import POJO.Bookingdates;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 

@@ -1,8 +1,8 @@
 package org.example;
 
-import POJO.Request.Bookingdates;
-import POJO.Request.CreatsBookingReq;
-import POJO.Request.Response.CreateBookingRes;
+import POJO.Bookingdates;
+import POJO.CreatesBookingReq;
+import POJO.Response.CreateBookingRes;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
@@ -23,7 +23,7 @@ public class responseParsing {
 
     @Test
     public void parseResponseIntoPojo(){
-        CreatsBookingReq requestBody = this.getCreatsBookingReqPojo("Sri", "BS", 500);
+        CreatesBookingReq requestBody = this.getCreatsBookingReqPojo("Sri", "BS", 500);
         Response response=this.requestSpecification
                 .basePath("/booking")
                 .and().contentType(ContentType.JSON)
@@ -37,9 +37,9 @@ public class responseParsing {
         Assert.assertEquals(createBookingRes.getBooking().getFirstName(),"Sri");
     }
 
-    public CreatsBookingReq getCreatsBookingReqPojo(String firstName, String lastName, int totalPrice){
+    public CreatesBookingReq getCreatsBookingReqPojo(String firstName, String lastName, int totalPrice){
 
-        CreatsBookingReq requestBody = new CreatsBookingReq();
+        CreatesBookingReq requestBody = new CreatesBookingReq();
         requestBody.setFirstName(firstName);
         requestBody.setLastName(lastName);
         requestBody.setTotalPrice(totalPrice);
